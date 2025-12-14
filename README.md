@@ -40,7 +40,7 @@ Interactive web-based roadmap creation tool with hierarchical node structure and
 ## Deployment
 
 ### Requirements
-- Python 3.11+
+- Python 3.9+
 - Flask 2.3.3+
 - Modern web browser with JavaScript enabled
 
