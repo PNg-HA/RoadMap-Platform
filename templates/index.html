@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="toolbar">
+            <h1>Roadmap Platform</h1>
+            <div class="controls">
+                <button id="addNodeBtn" class="btn btn-primary">Add Root Node</button>
+                <button id="addBranchBtn" class="btn btn-success" disabled>Add Branch</button>
+                <input type="color" id="colorPicker" class="color-picker" value="#3498db" title="Node Color">
+                <button id="saveBtn" class="btn btn-success">Save</button>
+                <button id="loadBtn" class="btn btn-info">Load</button>
+                <button id="clearBtn" class="btn btn-danger">Clear All</button>
+            </div>
+        </header>
+        
+        <main class="canvas-container">
+            <div id="canvas" class="canvas">
+                <svg id="connections" class="connections-layer"></svg>
+                <div id="nodes-layer" class="nodes-layer"></div>
+            </div>
+        </main>
+        
+        <!-- Node Edit Modal -->
+        <div id="nodeModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Edit Node</h2>
+                <form id="nodeForm">
+                    <div class="form-group">
+                        <label for="nodeTitle">Title:</label>
+                        <input type="text" id="nodeTitle" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nodeDescription">Description:</label>
+                        <textarea id="nodeDescription" name="description" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="nodeLinks">Links (one per line):</label>
+                        <textarea id="nodeLinks" name="links" rows="3" placeholder="https://example.com"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="nodeColor">Color:</label>
+                        <input type="color" id="nodeColor" name="color">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-success" id="addChildBtn">Add Child Branch</button>
+                        <button type="button" class="btn btn-danger" id="deleteNodeBtn">Delete</button>
+                        <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/roadmap.js') }}"></script>
+</body>
+</html>
