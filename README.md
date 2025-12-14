@@ -3,7 +3,9 @@
 Interactive web-based roadmap creation tool with hierarchical node structure and visual connections.
 
 ## Features
-![Uploading Screenshot 2025-12-14 184926.png…]()
+
+<img width="1893" height="762" alt="Screenshot 2025-12-14 184926" src="https://github.com/user-attachments/assets/9e9c277a-5510-482e-be13-db0a740a614c" />
+
 
 ### Node Management
 - **Root Nodes**: Create main roadmap items arranged vertically
